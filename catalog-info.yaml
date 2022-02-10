@@ -1,17 +1,16 @@
 apiVersion: backstage.io/v1alpha1
-kind: Component
+kind: Location
 metadata:
-  name: tanzu-java-web-app
-  description: Tanzu Java Web App
-  tags:
-    - app-accelerator
-    - java
-    - spring
-    - web
-    - tanzu
+  name: backstage-catalog-info
+  description: A sample catalog for Backstage
   annotations:
-    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=tanzu-java-web-app'
+    'backstage.io/techdocs-ref': dir:.
 spec:
-  type: service
-  lifecycle: experimental
-  owner: default-team
+  targets:
+    - ./components/backstage.yaml
+    - ./groups/default-org.yaml
+    - ./systems/backstage-system.yaml
+    - ./domains/backstage-domain.yaml
+    - https://github.com/sample-accelerators/tanzu-java-web-app/blob/main/catalog/catalog-info.yaml
+    - https://github.com/ybhagwan/spring-petclinic/blob/main/catalog-info.yaml
+    - https://github.com/ybhagwan/spring-petclinic-original/blob/main/catalog-info.yaml
